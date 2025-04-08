@@ -50,7 +50,6 @@ jobs:
     # Setup tf cli
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
-      working-directory: terraform
 
     # tf init
     - name: Terraform Init
