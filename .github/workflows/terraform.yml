@@ -47,6 +47,10 @@ jobs:
         role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT }}:role/role_github_actions
         aws-region: us-east-1
 
+    # Setup tf cli
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
