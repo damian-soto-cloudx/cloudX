@@ -50,19 +50,24 @@ jobs:
     # Setup tf cli
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
+      working-directory: terraform
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    # tf init
     - name: Terraform Init
       run: terraform init
+      working-directory: terraform
 
-    # Checks that all Terraform configuration files adhere to a canonical format
+    # tf check
     - name: Terraform Format
       run: terraform fmt -check
+      working-directory: terraform
 
-    # Generates an execution plan for Terraform
+    # tf plan
     - name: Terraform Plan
       run: terraform plan -input=false
+      working-directory: terraform
 
-    # On manual trigger, build or change infrastructure according to Terraform configuration files
+    # tf apply
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
+      working-directory: terraform
