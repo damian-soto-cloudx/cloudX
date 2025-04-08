@@ -19,7 +19,6 @@ jobs:
   terraform:
     name: 'Terraform'
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment == 'PROD' && 'production' || 'development' }}
 
     defaults:
       run:
