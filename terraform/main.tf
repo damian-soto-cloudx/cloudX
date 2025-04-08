@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-1" 
 }
 
-module "test_bucket" {
-  source      = "./modules/s3_bucket"
+module "s3_bucket" {
+  source      = "git::https://github.com/damian-soto-cloudx/terraform_modules.git//s3_bucket?ref=main"
   bucket_name = "cloudx-bucket-001"
 }
